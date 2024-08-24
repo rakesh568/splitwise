@@ -112,14 +112,14 @@ http://localhost:8080/api
           "group": "Office",
           "expense": "Breakfast @nisarga",
           "totalAmount": 100.00,
-          "partShare": "-25.00"
+          "share": "-25.00"
         },
         {
           "date": "2024-06-11",
           "group": "College",
           "expense": "Dinner",
           "totalAmount": 500.00,
-          "partShare": "+400.00"
+          "share": "+400.00"
         }
       ]
       ```
