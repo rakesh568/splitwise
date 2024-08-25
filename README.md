@@ -84,7 +84,7 @@ http://localhost:8080/api
   ```json
   {
     "name": "Friends Group",
-    "userMobiles": ["9835134343", "0987654321"]
+    "user_mobiles": ["9835134343", "0987654321"]
   }
   ```
 - Response:
@@ -133,18 +133,25 @@ http://localhost:8080/api
           "date": "2024-06-10",
           "group": "Office",
           "expense": "Breakfast @nisarga",
-          "totalAmount": 100.00,
+          "total_amount": 100.00,
           "share": "-25.00"
         },
         {
           "date": "2024-06-11",
           "group": "College",
           "expense": "Dinner",
-          "totalAmount": 500.00,
+          "total_amount": 500.00,
           "share": "+400.00"
         }
       ]
       ```
+
+#### 2.4 Settle all transactions between 2 users of a group
+- Endpoint: `/groups/{groupId}/settle?user1_uuid=<uuid>&user2_uuid=<uuid>`
+- Method: POST
+- Description: Settles all transactions between two users in a specific group. All transactions where User1 paid for User2 will be marked as settled, and all transactions where User2 paid for User1 will also be marked as settled.
+- Path Parameters:
+- group_id: The UUID of the group.
 
 ### 3. **Expense Management**
 
@@ -156,17 +163,17 @@ http://localhost:8080/api
 - Request Body:
   ```json
   {
-    "groupId": "0168c3a5-c95f-4a1f-b9e8-86944762387e",
-    "expenseName": "Dinner",
-    "totalAmount": 120.00,
-    "splitType": "EQUAL",
-    "paidBy": "c2df8e22-01ce-44df-b5ed-7feb749e579c",
-    "splitBreakup": [
+    "group_id": "0168c3a5-c95f-4a1f-b9e8-86944762387e",
+    "expense_name": "Dinner",
+    "total_amount": 120.00,
+    "split_type": "EQUAL",
+    "paid_by": "c2df8e22-01ce-44df-b5ed-7feb749e579c",
+    "split_breakup": [
       {
-        "userUuid": "c2df8e22-01ce-44df-b5ed-7feb749e579c"
+        "user_uuid": "c2df8e22-01ce-44df-b5ed-7feb749e579c"
       },
       {
-        "userUuid": "3b7d7f29-8d0b-4b9b-a254-3414d6783cb8"
+        "user_uuid": "3b7d7f29-8d0b-4b9b-a254-3414d6783cb8"
       }
     ]
   }
@@ -193,7 +200,7 @@ http://localhost:8080/api
       ```json
       {
         "uuid": "5e89c2e9-92f8-4d17-9d59-01d1245d7c72",
-        "expenseName": "Dinner"
+        "expense_name": "Dinner"
       }
       ```
 ---

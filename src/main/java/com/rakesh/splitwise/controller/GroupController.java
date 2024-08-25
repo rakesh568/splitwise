@@ -1,6 +1,8 @@
 package com.rakesh.splitwise.controller;
 
+import com.rakesh.splitwise.dto.ExpenseRequest;
 import com.rakesh.splitwise.dto.GroupRequest;
+import com.rakesh.splitwise.dto.SettlementRequest;
 import com.rakesh.splitwise.dto.TransactionResponse;
 import com.rakesh.splitwise.model.Group;
 import com.rakesh.splitwise.model.User;
@@ -53,12 +55,9 @@ public class GroupController {
     }
 
     @PostMapping("/{groupId}/settle")
-    public ResponseEntity<Void> settleTransactionsBetweenUsers(
-            @PathVariable UUID groupId,
-            @RequestParam UUID user1Uuid,
-            @RequestParam UUID user2Uuid) {
+    public ResponseEntity<Void> settleTransactionsBetweenUsers(@RequestBody SettlementRequest settlementRequest, @PathVariable UUID groupId) {
 
-        groupService.settleTransactionsBetweenUsers(groupId, user1Uuid, user2Uuid);
+        groupService.settleTransactionsBetweenUsers(groupId, settlementRequest.getUser1Uuid(), settlementRequest.getUser2Uuid());
         return ResponseEntity.ok().build();
     }
 }
