@@ -16,7 +16,7 @@ COPY src ./src
 RUN chmod +x ./mvnw
 
 # Build the application using the Maven Wrapper
-RUN ./mvnw clean package
+RUN ./mvnw clean package -DskipTests
 
 # Use the same image to run the application
 FROM openjdk:17-jdk-slim

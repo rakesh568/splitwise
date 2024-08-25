@@ -62,7 +62,7 @@ http://localhost:8080/api
   ```json
   {
     "name": "Friends Group",
-    "userMobiles": ["1234567890", "0987654321"]
+    "userMobiles": ["9835134343", "0987654321"]
   }
   ```
 - Response:
