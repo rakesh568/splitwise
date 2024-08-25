@@ -1,12 +1,34 @@
-# API Documentation
+# Documentation
 
 ## Overview
-This API allows for the management of users, groups, and expenses. It includes endpoints to create and retrieve users, groups, and expenses, as well as to retrieve transactions associated with a group for a specific user.
-
+This is a demo splitvise project which allows friends to share and manage their expenses.
 
 ---
 
+## Build Steps
+
+To build and run this project, you can use Docker Compose. The following steps outline how to set up and start the application using Docker.
+
+**Steps**
+
+1. Ensure Docker is installed on your machine.
+2. Navigate to the project directory where the `docker-compose.yml` file is located.
+3. Build and start the containers using Docker Compose:
+
+   ```bash
+    docker compose up --build
+   ```
+4. Access the API at http://localhost:8080/api.
+5. Stop the containers when you are done:
+  ```bash
+    docker compose down
+  ```
+
 ## API Documentation
+
+### Overview
+This API allows for the management of users, groups, and expenses. It includes endpoints to create and retrieve users, groups, and expenses, as well as to retrieve transactions associated with a group for a specific user.
+
 ### Base URL
 http://localhost:8080/api
 
@@ -174,6 +196,7 @@ http://localhost:8080/api
         "expenseName": "Dinner"
       }
       ```
+---
 
 ## Class Diagram
 ```mermaid
