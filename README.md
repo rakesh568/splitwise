@@ -151,7 +151,16 @@ http://localhost:8080/api
 - Method: POST
 - Description: Settles all transactions between two users in a specific group. All transactions where User1 paid for User2 will be marked as settled, and all transactions where User2 paid for User1 will also be marked as settled.
 - Path Parameters:
-- group_id: The UUID of the group.
+  - group_id: The UUID of the group.
+- Request Body:
+  ```json
+    {
+      "user1_uuid": "db11430d-afd9-4bb7-a91b-5c82aad4bd65",
+      "user2_uuid": "5ac3c631-b868-46f6-8119-86a11a2372c2"
+    }
+  ```
+- Response:
+  - Status: 200 OK
 
 ### 3. **Expense Management**
 
